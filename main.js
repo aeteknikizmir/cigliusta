@@ -1,14 +1,12 @@
-// Hamburger menu
+// Hamburger
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-if (hamburger) {
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('acik'));
-}
+if (hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('acik'));
 
 // Scroll fade-in
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // SSS accordion
